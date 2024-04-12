@@ -16,6 +16,17 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Rol -->
+        <div class="mt-4">
+            <x-input-label for="rol" :value="__('Que tipo de cuenta deseas abrir?')" />
+            <select wire:model="rol" id="rol" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" name="rol">
+                <option value="">Selecciona un rol</option>
+                <option value="1">Empleado</option>
+                <option value="2">Empresario</option>
+            </select>
+            <x-input-error :messages="$errors->get('rol')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Contraseña')" />
