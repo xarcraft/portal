@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('ofertas.index')" :active="request()->routeIs('ofertas.index')">
                         {{ __('Publicaciones') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('ofertas.create')" :active="request()->routeIs('ofertas.create')">
+                        {{ __('Crear Publicación') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -68,6 +71,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('ofertas.index')" :active="request()->routeIs('ofertas.index')">
                 {{ __('Publicaciones') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('ofertas.create')" :active="request()->routeIs('ofertas.create')">
+                {{ __('Crear Publicacion') }}
             </x-responsive-nav-link>
         </div>
 
