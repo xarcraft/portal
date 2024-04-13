@@ -1,1 +1,1 @@
-<img class="w-52 mt-14 mb-4" src="{{asset('img/logo.png')}}" alt="logo">
+<img class="w-52 mt-14 mb-4" src="{{asset('img/eslogan.png')}}" alt="logo">
