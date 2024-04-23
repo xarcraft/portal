@@ -61,9 +61,11 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        text-align: center;
         gap: 30px;
         padding-bottom: 80px;
-        padding-left: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
         width: 100%;
     }
 
