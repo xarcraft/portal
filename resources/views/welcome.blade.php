@@ -161,8 +161,8 @@
                         </div>
                     </main> -->
 
-                
-                <x-footer/>
+
+                <x-footer />
             </div>
         </div>
     </div>
