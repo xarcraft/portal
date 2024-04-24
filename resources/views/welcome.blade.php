@@ -161,13 +161,8 @@
                         </div>
                     </main> -->
 
-                {{-- <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                    <h4>S.I NOVA GESTIÓN
-                        <?php echo date('Y'); ?> © Todos los derechos reservados
-                    </h4>
-                </footer> --}}
-                <x-footer>
-                </x-footer>
+                
+                <x-footer/>
             </div>
         </div>
     </div>
