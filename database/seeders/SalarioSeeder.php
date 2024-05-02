@@ -38,7 +38,7 @@ class SalarioSeeder extends Seeder
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => "$4'000.000 - $6'000.000",
+            'salario' => "$4'001.000 - $6'000.000",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
