@@ -7,9 +7,17 @@
             <p class="text-sm text-gray-500">publicada el: {{ $oferta->updated_at->format('d/m/Y') }}</p>
         </div>
         <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
-            <a href="#" class="bg-slate-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Postulados</a>
-            <a href="#" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>
+
+            <a href="#" class="bg-indigo-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Postulados</a>
+            <a href="#" class="bg-green-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>
             <a href="#" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Eliminar</a>
+
+            @if($oferta->publicado==1)
+            <a href="#" class="bg-gray-500 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">pausar</a>
+            @else
+            <a href="#" class="bg-blue-300 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">reanudar</a>
+            @endif
+
         </div>
     </div>
     @empty
