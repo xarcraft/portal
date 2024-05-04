@@ -4,6 +4,7 @@
         <div class="space-y-2">
             <a href="#" class="text-xl font-bold uppercase">{{ $oferta->titulo }}</a>
             <p class="text-sm text-gray-600 font-bold">{{ $oferta->empresa }}</p>
+            <p class="text-sm text-red-600 font-bold">aqui va la modalidad del empleo *</p>
             <p class="text-sm text-gray-500">publicada el: {{ $oferta->updated_at->format('d/m/Y') }}</p>
         </div>
         <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
