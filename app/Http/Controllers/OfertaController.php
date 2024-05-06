@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oferta;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class OfertaController extends Controller
@@ -41,9 +43,16 @@ class OfertaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Oferta $oferta)
     {
-        //
+        //$this->authorize('update',$oferta);
+        if (Gate::allows('update', $oferta)) {
+            return view('ofertas.edit', [
+                'oferta' => $oferta
+            ]);
+        } else {
+            return redirect()->route('ofertas.index');
+        }
     }
 
     /**
