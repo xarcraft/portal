@@ -44,12 +44,12 @@ class CrearOferta extends Component
             $datos['requerimientos'] = '';
         }
 
-        if ($datos['imagen'] == '') {
-            $datos['imagen'] = '';
-        } else {
+        if ($datos['imagen'] != '') {
             // Almacenando la imagen
             $imagen = $this->imagen->store('public/ofertas');
             $datos['imagen'] = str_replace('public/ofertas/', '', $imagen);
+        } else {
+            $datos['imagen'] = '';
         }
 
         //Crear la oferta
