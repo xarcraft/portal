@@ -10,7 +10,7 @@
         <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
 
             <a href="#" class="bg-indigo-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Postulados</a>
-            <a href="#" class="bg-green-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>
+            <a href="{{route('ofertas.edit', $oferta->id)}}" class="bg-green-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>
             <a href="#" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Eliminar</a>
 
             @if($oferta->publicado==1)
