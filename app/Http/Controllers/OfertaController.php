@@ -58,9 +58,18 @@ class OfertaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update($ofertaId)
     {
-        //
+        $oferta = Oferta::find($ofertaId);
+        if ($oferta) {
+            if ($oferta->publicado) {
+                $oferta->publicado = 0;
+            } else {
+                $oferta->publicado = 1;
+            }
+            $oferta->save();
+        }
+        return back();
     }
 
     /**

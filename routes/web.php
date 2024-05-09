@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [OfertaController::class, 'index'])->middleware(['auth', 'verified'])->name('ofertas.index');
 Route::get('/ofertas/create', [OfertaController::class, 'create'])->middleware(['auth', 'verified'])->name('ofertas.create');
 Route::get('/ofertas/{oferta}/edit', [OfertaController::class, 'edit'])->middleware(['auth', 'verified'])->name('ofertas.edit');
+Route::get('/ofertas/{oferta}/update', [OfertaController::class, 'update'])->middleware(['auth', 'verified'])->name('ofertas.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
