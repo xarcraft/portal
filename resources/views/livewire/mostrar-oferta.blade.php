@@ -10,8 +10,8 @@
         <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
 
             <a href="#" class="bg-indigo-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Postulados</a>
-            <a href="{{route('ofertas.edit', $oferta->id)}}" class="bg-green-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>
-            <a href="#" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Eliminar</a>
+            <a href="{{route('ofertas.edit', $oferta->id)}}" class="bg-green-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>            
+            <button wire:click="$dispatch('eliminar', {{$oferta->id}})" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Eliminar</button>            
             <a href="{{route('ofertas.update',$oferta->id)}}" class="{{ $oferta->publicado ? 'bg-gray-500' : 'bg-blue-300'}} py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                 {{ $oferta->publicado ? 'Pausar' :'Reanudar'}}
             </a>
@@ -25,3 +25,32 @@
         {{ $ofertas->links() }}
     </div>
 </div>
+
+
+<!-- alerta de borrado de oferta -->
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    Livewire.on('eliminar', (ofertaId) => {
+        Swal.fire({
+            title: 'Estas seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Bórralo",
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch('eliminarOferta', { oferta: ofertaId })
+                Swal.fire({
+                    title: "Oferta eliminada!",
+                    text: "tu oferta se elimino satisfactoriamente.",
+                    icon: "success"
+                });
+            }
+        });
+    })
+</script>
+@endpush
