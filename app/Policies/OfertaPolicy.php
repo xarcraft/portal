@@ -43,9 +43,9 @@ class OfertaPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Oferta $oferta): void
+    public function delete(User $user, Oferta $oferta): bool
     {
-        //
+        return $user->id === $oferta->user_id;
     }
 
     /**
