@@ -35,9 +35,9 @@ class OfertaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Oferta $oferta)
     {
-        //
+        return view('ofertas.show', ['oferta' => $oferta]);
     }
 
     /**
