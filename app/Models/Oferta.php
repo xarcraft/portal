@@ -21,4 +21,17 @@ class Oferta extends Model
         'imagen',
         'user_id',
     ];
+
+    public function salario()
+    {
+        return $this->belongsTo(Salario::class);
+    }
+    public function modalida()
+    {
+        return $this->belongsTo(Modalida::class);
+    }
+    public function horario()
+    {
+        return $this->belongsTo(Horario::class);
+    }
 }
