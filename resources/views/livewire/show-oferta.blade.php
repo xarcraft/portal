@@ -42,10 +42,10 @@
     </div>
 
     @guest
-        <div class="mt-5 bg-indigo-50 border-dashed p-5 text-center">
-            <p>
-                ¿Quieres aplicar a esta oferta? <a class="font-bold text-indigo-600" href="{{ route('register')}}">Crea una cuenta totalmente gratis y accede a esta y muchas otras ofertas</a>
-            </p>
-        </div>
+    <div class="mt-5 bg-indigo-50 border-dashed p-5 text-center">
+        <p>
+            ¿Quieres aplicar a esta oferta? <a class="font-bold text-indigo-600" href="{{ route('register')}}">Crea una cuenta totalmente gratis y accede a esta y muchas otras ofertas</a>
+        </p>
+    </div>
     @endguest
 </div>
