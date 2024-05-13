@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('imagen');
             $table->integer('publicado')->default(0);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->integer('revision')->default(0);
         });
     }
 
@@ -36,7 +37,7 @@ return new class extends Migration
             $table->dropForeign('ofertas_modalida_id_foreign');
             $table->dropForeign('ofertas_salario_id_foreign');
             $table->dropForeign('ofertas_user_id_foreign');
-            $table->dropColumn(['titulo', 'empresa', 'ubicacion', 'descripcion', 'salario_id', 'modalida_id', 'requerimientos', 'horario_id', 'imagen', 'publicado', 'user_id']);
+            $table->dropColumn(['titulo', 'empresa', 'ubicacion', 'descripcion', 'salario_id', 'modalida_id', 'requerimientos', 'horario_id', 'imagen', 'publicado', 'user_id', 'revision']);
         });
     }
 };
