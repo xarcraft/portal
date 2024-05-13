@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('requerimientos');
             $table->foreignId('horario_id')->constrained()->onDelete('cascade');
             $table->string('imagen');
-            $table->integer('publicado')->default(1);
+            $table->integer('publicado')->default(0);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
