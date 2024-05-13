@@ -8,6 +8,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/terminos', function () {
+    return view('terminos/terminos');
+});
+
+Route::get('/politica', function () {
+    return view('terminos/politica');
+});
+
 Route::get('/dashboard', [OfertaController::class, 'index'])->middleware(['auth', 'verified'])->name('ofertas.index');
 Route::get('/ofertas/create', [OfertaController::class, 'create'])->middleware(['auth', 'verified'])->name('ofertas.create');
 Route::get('/ofertas/{oferta}/edit', [OfertaController::class, 'edit'])->middleware(['auth', 'verified'])->name('ofertas.edit');
