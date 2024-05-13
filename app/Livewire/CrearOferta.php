@@ -67,7 +67,7 @@ class CrearOferta extends Component
         ]);
 
         // mensaje de exito
-        session()->flash('mensaje', 'La oferta fue publicada con exito');
+        session()->flash('mensaje', 'La oferta fue enviada a revisión pronto estará disponible para posterior publicación. Gracias por elegirnos');
 
         // redireccionar agente publicitador
         return redirect()->route('ofertas.index');
