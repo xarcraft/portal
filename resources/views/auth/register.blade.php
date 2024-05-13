@@ -50,7 +50,7 @@
             <label for="term" class="inline-flex items-center">
                 <x-text-input id="term" value="acepta" type="checkbox" required class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="term" />
                 <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p>Si he leído y acepto las <a href="#" class="text-indigo-400 font-bold">Condiciones del servicio</a> y la <a href="#" class="text-indigo-400 font-bold">Politica de tratamiento de datos</a> de la empresa S.I Nova Gestión</p>
+                    <p>Si he leído y acepto las <a href="#" class="text-indigo-400 font-bold">Condiciones del servicio</a> y la <a href="#" class="text-indigo-400 font-bold">Política de tratamiento de datos</a> de la empresa S.I Nova Gestión</p>
                 </span>
             </label>
         </div>
