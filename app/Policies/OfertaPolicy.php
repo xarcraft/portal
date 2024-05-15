@@ -11,9 +11,9 @@ class OfertaPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): void
+    public function viewAny(User $user): bool
     {
-        //
+        return $user->rol === 2;
     }
 
     /**
@@ -27,9 +27,9 @@ class OfertaPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): void
+    public function create(User $user): bool
     {
-        //
+        return $user->rol === 2;
     }
 
     /**

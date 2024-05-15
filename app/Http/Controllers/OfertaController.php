@@ -13,6 +13,8 @@ class OfertaController extends Controller
      */
     public function index()
     {
+
+        $this->authorize('viewAny', Oferta::class);
         return view('ofertas.index');
     }
 
@@ -21,6 +23,7 @@ class OfertaController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Oferta::class);
         return view('ofertas.create');
     }
 
@@ -45,14 +48,14 @@ class OfertaController extends Controller
      */
     public function edit(Oferta $oferta)
     {
-        //$this->authorize('update',$oferta);
-        if (Gate::allows('update', $oferta)) {
-            return view('ofertas.edit', [
-                'oferta' => $oferta
-            ]);
-        } else {
-            return redirect()->route('ofertas.index');
-        }
+        $this->authorize('update',$oferta);
+        // if (Gate::allows('update', $oferta)) {
+        //     return view('ofertas.edit', [
+        //         'oferta' => $oferta
+        //     ]);
+        // } else {
+        //     return redirect()->route('ofertas.index');
+        // }
     }
 
     /**
