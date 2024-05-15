@@ -49,6 +49,9 @@ class OfertaController extends Controller
     public function edit(Oferta $oferta)
     {
         $this->authorize('update',$oferta);
+        return view('ofertas.edit', [
+            'oferta' => $oferta
+        ]);
         // if (Gate::allows('update', $oferta)) {
         //     return view('ofertas.edit', [
         //         'oferta' => $oferta
