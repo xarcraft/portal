@@ -48,4 +48,8 @@
         </p>
     </div>
     @endguest
+
+    @cannot('create', App\Models\Oferta::class)
+    <livewire:postular-oferta :oferta="$oferta" />
+    @endcannot
 </div>

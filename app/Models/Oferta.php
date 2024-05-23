@@ -26,12 +26,19 @@ class Oferta extends Model
     {
         return $this->belongsTo(Salario::class);
     }
+
     public function modalida()
     {
         return $this->belongsTo(Modalida::class);
     }
+
     public function horario()
     {
         return $this->belongsTo(Horario::class);
+    }
+    
+    public function candidatos()
+    {
+        return $this->hasMany(Candidato::class);
     }
 }
