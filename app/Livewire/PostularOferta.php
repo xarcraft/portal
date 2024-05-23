@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Oferta;
+use App\Notifications\NuevoCandidato;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -37,6 +38,7 @@ class PostularOferta extends Component
         ]);
 
         // Crear notificación y email
+        $this->oferta->empleador->notify(new NuevoCandidato($this->oferta->id, $this->oferta->titulo, auth()->user()->id,));
 
         // Mostrar mensaje de enviado
         session()->flash('mensaje', 'Se cargo con exito tu CV en la oferta mucha suerte');

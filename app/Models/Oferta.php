@@ -41,4 +41,9 @@ class Oferta extends Model
     {
         return $this->hasMany(Candidato::class);
     }
+
+    public function empleador()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
