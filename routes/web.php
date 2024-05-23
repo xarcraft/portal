@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/terminos', function () {
     return view('terminos/terminos');
@@ -17,14 +17,14 @@ Route::get('/politica', function () {
     return view('terminos/politica');
 });
 
-Route::get('/dashboard', [OfertaController::class, 'index'])->middleware(['auth', 'verified'])->name('ofertas.index');
+Route::get('/dashboard', [OfertaController::class, 'index'])->middleware(['auth', 'verified', 'rol.reclutador'])->name('ofertas.index');
 Route::get('/ofertas/create', [OfertaController::class, 'create'])->middleware(['auth', 'verified'])->name('ofertas.create');
 Route::get('/ofertas/{oferta}/edit', [OfertaController::class, 'edit'])->middleware(['auth', 'verified'])->name('ofertas.edit');
 Route::get('/ofertas/{oferta}/update', [OfertaController::class, 'update'])->middleware(['auth', 'verified'])->name('ofertas.update');
 Route::get('/ofertas/{oferta}', [OfertaController::class, 'show'])->name('ofertas.show');
 
 //Notificaciones
-Route::get('/notificaciones', NotificacionController::class)->name('notificaciones');
+Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified', 'rol.reclutador'])->name('notificaciones');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
