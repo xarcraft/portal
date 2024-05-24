@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidato;
+use App\Models\Oferta;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -10,9 +11,11 @@ class CandidatoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Oferta $oferta)
     {
-        //
+        return view('postulados.index', [
+            'oferta' => $oferta
+        ]);
     }
 
     /**

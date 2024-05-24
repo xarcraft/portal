@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\NotificacionController;
 use App\Http\Controllers\OfertaController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,7 @@ Route::get('/ofertas/create', [OfertaController::class, 'create'])->middleware([
 Route::get('/ofertas/{oferta}/edit', [OfertaController::class, 'edit'])->middleware(['auth', 'verified'])->name('ofertas.edit');
 Route::get('/ofertas/{oferta}/update', [OfertaController::class, 'update'])->middleware(['auth', 'verified'])->name('ofertas.update');
 Route::get('/ofertas/{oferta}', [OfertaController::class, 'show'])->name('ofertas.show');
+Route::get('/postulados/{oferta}', [CandidatoController::class, 'index'])->name('candidatos.index');
 
 //Notificaciones
 Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified', 'rol.reclutador'])->name('notificaciones');

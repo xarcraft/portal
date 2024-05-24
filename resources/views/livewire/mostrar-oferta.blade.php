@@ -9,7 +9,7 @@
         </div>
         <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
 
-            <a href="#" class="bg-indigo-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Postulados</a>
+            <a href="{{ route('candidatos.index',$oferta)}}" class="bg-indigo-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">{{$oferta->candidatos->count()}} Postulados</a>
             <a href="{{route('ofertas.edit', $oferta->id)}}" class="bg-green-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Editar</a>
             <button wire:click="$dispatch('eliminar', {{$oferta->id}})" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">Eliminar</button>
             <a href="{{route('ofertas.update',$oferta->id)}}" class="{{ $oferta->publicado ? 'bg-gray-500' : 'bg-blue-300'}} py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
