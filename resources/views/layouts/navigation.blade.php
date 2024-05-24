@@ -30,8 +30,8 @@
                 @auth
 
                 @can('create', App\Models\Oferta::class)
-                <a href="{{route('notificaciones')}}" class="mr-2 w-7 h-7 bg-indigo-600 hover:bg-indigo-800 rounded-full flex flex-col justify-center items-center text-sm font-extrabold text-white">
-                    {{Auth::user()->unreadNotifications->count()}}
+                <a href="{{route('notificaciones')}}" class="fa-solid fa-bell text-2xl {{Auth::user()->unreadNotifications->count() ? 'text-red-700' : 'text-green-600'}}">
+                    <sup class="text-xs font-extrabold text-black">{{Auth::user()->unreadNotifications->count() ? Auth::user()->unreadNotifications->count() : ''}}</sup>
                 </a>
                 @endcan
 
