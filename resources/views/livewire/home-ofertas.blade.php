@@ -1,5 +1,5 @@
 <div>
-    <livewire:filtrar-ofertas/>
+    <livewire:filtrar-ofertas />
     <div class="py-12">
         <div class="max-w-7xl mx-auto">
             <h3 class="font-extrabold text-4xl text-gray-800 mb-12 text-center">Nuestras Ofertas Disponibles</h3>
@@ -22,4 +22,10 @@
             </div>
         </div>
     </div>
+    <div>
+        <p class="text-sm font-bold text-center">
+            S.I Nova Gestión <?php echo date('Y'); ?> © Todos los derechos reservados
+        </p>
+    </div>
+
 </div>
