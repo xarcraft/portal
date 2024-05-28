@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="pb-4">
         <p class="text-sm font-bold text-center">
             S.I Nova Gestión <?php echo date('Y'); ?> © Todos los derechos reservados
         </p>
