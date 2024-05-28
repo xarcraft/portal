@@ -41,7 +41,8 @@ class PostularOferta extends Component
         $this->oferta->empleador->notify(new NuevoCandidato($this->oferta->id, $this->oferta->titulo, auth()->user()->id,));
 
         // Mostrar mensaje de enviado
-        session()->flash('mensaje', 'Se cargo con exito tu CV en la oferta mucha suerte');
+        session()->flash('mensaje', 'Se cargo con exito tu hoja de vida en la oferta, mucha suerte');
+
         return redirect()->back();
     }
 

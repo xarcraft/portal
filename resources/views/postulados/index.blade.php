@@ -17,6 +17,7 @@
                                 <div class="flex-1">
                                     <p class="text-xl font-medium text-gray-800">{{$candidato->user->name}}</p>
                                     <p class="text-sm font-medium text-gray-600">{{$candidato->user->email}}</p>
+                                    <p class="text-sm font-medium text-gray-600">{{$candidato->user->phone}}</p>
                                     <p class="text-sm font-medium text-gray-600">{{$candidato->created_at->diffForHumans()}}</p>
                                 </div>
                                 <div>
