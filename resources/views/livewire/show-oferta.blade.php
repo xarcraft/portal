@@ -49,7 +49,10 @@
     </div>
     @endguest
 
+    @auth
     @cannot('create', App\Models\Oferta::class)
     <livewire:postular-oferta :oferta="$oferta" />
     @endcannot
+    @endauth
+
 </div>
