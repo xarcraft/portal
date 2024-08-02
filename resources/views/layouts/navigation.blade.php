@@ -20,9 +20,23 @@
                     <x-nav-link :href="route('ofertas.create')" :active="request()->routeIs('ofertas.create')">
                         {{ __('Crear Publicación') }}
                     </x-nav-link>
+
                 </div>
                 @endcan
                 @endauth
+
+                @auth
+                @if (auth()->user()->rol === 1)
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('consultas.index')" :active="request()->routeIs('consultas.index')">
+                        {{ __('Mis postulaciones') }}
+                    </x-nav-link>
+                </div>
+                @endif
+                @endauth
+
+
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -116,6 +130,14 @@
 
         </div>
         @endcan
+
+        @auth
+        @if (auth()->user()->rol === 1)
+        <x-responsive-nav-link :href="route('consultas.index')" :active="request()->routeIs('consultas.index')">
+            {{ __('Mis postulaciones') }}
+        </x-responsive-nav-link>
+        @endif
+        @endauth
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">

@@ -43,7 +43,8 @@ class PostularOferta extends Component
         // Mostrar mensaje de enviado
         session()->flash('mensaje', 'Se cargo con exito tu hoja de vida en la oferta, mucha suerte');
 
-        return redirect()->back();
+        return redirect()->route('consultas.index');
+        //return redirect()->back();
     }
 
     public function render()
