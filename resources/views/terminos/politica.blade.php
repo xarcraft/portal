@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 dark:text-gray-300">
             <p>La empresa SI NOVA GESTION SAS, en cumplimiento de lo dispuesto en la normatividad legal vigente, se compromete a garantizar la protección y seguridad de los datos personales de sus usuarios y clientes.</p> <br>
 
             1. Responsable del Tratamiento de Datos Personales <br><br>

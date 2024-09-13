@@ -15,7 +15,7 @@
                         @forelse ($notificaciones as $notificacion)
                         <div class="p-5 lg:flex lg:justify-between lg:items-center">
                             <div>
-                                <p>Tienes un nuevo candidato en: <span class="font-bold">{{$notificacion->data['nombre_oferta']}}</span></p>
+                                <p>Tienes una novedad en: <span class="font-bold">{{$notificacion->data['nombre_oferta']}}</span></p>
                                 <p><span class="font-bold">{{$notificacion->created_at->diffForHumans()}}</span></p>
                             </div>
                             <div class="p-2">

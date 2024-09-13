@@ -15,10 +15,10 @@
                             @forelse ($oferta->candidatos as $candidato)
                             <li class="p-3 flex items-center">
                                 <div class="flex-1">
-                                    <p class="text-xl font-medium text-gray-800">{{$candidato->user->name}}</p>
-                                    <p class="text-sm font-medium text-gray-600">{{$candidato->user->email}}</p>
-                                    <p class="text-sm font-medium text-gray-600">{{$candidato->user->phone}}</p>
-                                    <p class="text-sm font-medium text-gray-600">{{$candidato->created_at->diffForHumans()}}</p>
+                                    <p class="text-xl font-medium text-gray-800 dark:text-gray-200">{{$candidato->user->name}}</p>
+                                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{{$candidato->user->email}}</p>
+                                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{{$candidato->user->phone}}</p>
+                                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{{$candidato->created_at->diffForHumans()}}</p>
                                 </div>
                                 <div>
                                     <a href="{{asset('storage/cvs/' . $candidato->cv)}}" target="_blank" rel="noreferrer noopener" class="inline-flex items-center shadow-sm p-3 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 h-8">
@@ -27,7 +27,7 @@
                                 </div>
                             </li>
                             @empty
-                            <p class="p-3 text-center text-sm text-gray-600">No hay postulados aun</p>
+                            <p class="p-3 text-center text-sm text-gray-600 dark:text-gray-300">No hay postulados aun</p>
                             @endforelse
                         </ul>
                     </div>

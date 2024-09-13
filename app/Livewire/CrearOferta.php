@@ -8,6 +8,7 @@ use App\Models\Oferta;
 use App\Models\Salario;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class CrearOferta extends Component
 {
@@ -45,7 +46,7 @@ class CrearOferta extends Component
         }
 
         // Almacenando la imagen
-        if ($datos['imagen'] != '') {            
+        if ($datos['imagen'] != '') {
             $imagen = $this->imagen->store('public/ofertas');
             $datos['imagen'] = str_replace('public/ofertas/', '', $imagen);
         } else {
@@ -68,6 +69,13 @@ class CrearOferta extends Component
 
         // mensaje de exito
         session()->flash('mensaje', 'La oferta fue enviada a revisión pronto estará disponible para posterior publicación. Gracias por elegirnos');
+
+        //Borrar temporales
+        $oldfiles = Storage::files('livewire-tmp');
+
+        foreach ($oldfiles as $file) {
+            Storage::delete($file);
+        }
 
         // redireccionar agente publicitador
         return redirect()->route('ofertas.index');

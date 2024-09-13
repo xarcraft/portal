@@ -5,9 +5,15 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('ofertas.index') }}">
-                        <img class="w-28 p-2" src="{{asset('img/eslogan.png')}}" alt="logo">
+                    <a href="https://www.novagestion.co"
+                        class="inline-flex items-center text-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gray-300 dark:focus:border-gray-700 transition duration-150 ease-in-out">
+                        Volver a la <br>Página Principal
                     </a>
+                    <br>
+                    <a href="{{ route('ofertas.index') }}">
+                        <x-application-logo class="w-20 h-20 fill-current text-gray-500 dark:text-gray-300" />
+                    </a>
+
                 </div>
 
                 @auth
@@ -30,6 +36,16 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('consultas.index')" :active="request()->routeIs('consultas.index')">
                         {{ __('Mis postulaciones') }}
+                    </x-nav-link>
+                </div>
+                @endif
+                @endauth
+
+                @auth
+                @if (auth()->user()->rol === 3)
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                        {{ __('Administrador') }}
                     </x-nav-link>
                 </div>
                 @endif
@@ -135,6 +151,14 @@
         @if (auth()->user()->rol === 1)
         <x-responsive-nav-link :href="route('consultas.index')" :active="request()->routeIs('consultas.index')">
             {{ __('Mis postulaciones') }}
+        </x-responsive-nav-link>
+        @endif
+        @endauth
+
+        @auth
+        @if (auth()->user()->rol === 3)
+        <x-responsive-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+            {{ __('Administrador') }}
         </x-responsive-nav-link>
         @endif
         @endauth

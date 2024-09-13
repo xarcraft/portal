@@ -23,15 +23,15 @@ class HomeOfertas extends Component
     public function render()
     {
         //$ofertas = Oferta::where('publicado', 1)->orderBy('updated_at', 'DESC')->paginate(20);
-        $ofertas = Oferta::where('publicado', 1)
+        $ofertas = Oferta::where([['publicado', 1], ['revision', 1]])
             ->when($this->termino, function ($query) {
-                $query->where('titulo', 'LIKE', "%" . $this->termino . "%");
+                $query->where([['titulo', 'LIKE', "%" . $this->termino . "%"], ['revision', 1], ['publicado', 1]]);
             })
             ->when($this->termino, function ($query) {
-                $query->orWhere('empresa', 'LIKE', "%" . $this->termino . "%");
+                $query->orWhere([['empresa', 'LIKE', "%" . $this->termino . "%"], ['revision', 1], ['publicado', 1]]);
             })
             ->when($this->termino, function ($query) {
-                $query->orWhere('ubicacion', 'LIKE', "%" . $this->termino . "%");
+                $query->orWhere([['ubicacion', 'LIKE', "%" . $this->termino . "%"], ['revision', 1], ['publicado', 1]]);
             })
             ->when($this->modalida, function ($query) {
                 $query->where('modalida_id', $this->modalida);

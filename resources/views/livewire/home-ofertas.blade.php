@@ -2,7 +2,7 @@
     <livewire:filtrar-ofertas />
     <div class="py-12">
         <div class="max-w-7xl mx-auto">
-            <h3 class="font-extrabold text-4xl text-gray-800 mb-12 text-center">Nuestras Ofertas Disponibles</h3>
+            <h3 class="font-extrabold text-4xl text-gray-800 mb-12 text-center dark:text-gray-300">Nuestras Ofertas Disponibles</h3>
             <div class="bg-white shadow-sm rounded-lg p-6 divide-y divide-gray-200">
                 @forelse ($ofertas as $oferta)
                 <div class="md:flex md:justify-between md:items-center py-5">
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="pb-4">
-        <p class="text-sm font-bold text-center">
+        <p class="text-sm font-bold text-center dark:text-gray-300">
             S.I Nova Gestión <?php echo date('Y'); ?> © Todos los derechos reservados
         </p>
     </div>

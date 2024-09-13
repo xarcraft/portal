@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 dark:text-gray-300">
             <p>Bienvenido al portal de empleo de SI NOVA GESTION SAS. Al acceder y utilizar nuestros servicios, aceptas los siguientes términos y condiciones:</p> <br>
 
             1. Uso del portal: Nuestro portal de empleo tiene como objetivo facilitar la búsqueda y publicación de ofertas laborales. Los usuarios se comprometen a utilizar la plataforma de manera ética y respetuosa. <br><br>

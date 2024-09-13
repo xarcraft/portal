@@ -1,8 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Crear Publicación') }}
-        </h2>
+        <div class="flex flex-row justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Crear Publicación') }}
+            </h2>
+            <a href="/guia" class="hover:cursor-help text-indigo-600 dark:text-gray-400"><span class="font-bold mr-1 text-black dark:text-gray-300"> ? </span> Parámetros de publicación</a>
+        </div>
     </x-slot>
 
     <div class="py-12">

@@ -1,11 +1,11 @@
 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
     @forelse ($ofertas as $oferta)
-    <div class="p-6 text-gray-900 dark:text-gray-100 md:flex md:justify-between md:items-center">
+    <div class="p-6 text-gray-900 dark:text-gray-300 md:flex md:justify-between md:items-center">
         <div class="space-y-2">
             <a href="{{route('ofertas.show',$oferta->id)}}" class="text-xl font-bold uppercase">{{ $oferta->titulo }}</a>
-            <p class="text-sm text-gray-600 font-bold">{{ $oferta->empresa }}</p>
-            <p class="text-sm text-gray-600 font-bold">{{$oferta->modalida->modalida}}</p>
-            <p class="text-sm text-gray-500">publicada el: {{ $oferta->updated_at->format('d/m/Y') }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 font-bold">{{ $oferta->empresa }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 font-bold">{{$oferta->modalida->modalida}}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">publicada el: {{ $oferta->updated_at->format('d/m/Y') }}</p>
         </div>
         <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
 

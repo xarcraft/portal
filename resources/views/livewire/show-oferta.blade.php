@@ -26,12 +26,12 @@
     <div class="md:grid md:grid-cols-6">
         <div class="md:col-span-4">
             <div>
-                <h2 class="text-2xl font-bold mb-2">Descripción de la oferta</h2>
-                <p>{{$oferta->descripcion}}</p>
+                <h2 class="text-2xl font-bold mb-2 dark:text-gray-300">Descripción de la oferta</h2>
+                <p class="dark:text-gray-300">{{$oferta->descripcion}}</p>
             </div>
             <div class="mt-5">
-                <h2 class="text-2xl font-bold mb-2">Requerimientos específicos</h2>
-                <p>{{$oferta->requerimientos}}</p>
+                <h2 class="text-2xl font-bold mb-2 dark:text-gray-300">Requerimientos específicos</h2>
+                <p class="dark:text-gray-300">{{$oferta->requerimientos}}</p>
             </div>
         </div>
         <div class="md:col-span-2 mt-5">
@@ -50,9 +50,14 @@
     @endguest
 
     @auth
+    @if (auth()->user()->rol === 3)
+    <livewire:validar-oferta :oferta="$oferta"/>
+    @else
     @cannot('create', App\Models\Oferta::class)
     <livewire:postular-oferta :oferta="$oferta" />
     @endcannot
+    @endif
+
     @endauth
 
 </div>
